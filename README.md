@@ -1,4 +1,6 @@
 node-web-scraper
 ================
 
-Simple web scraper to get a movie name, release year and community rating from IMDB.
+Simple web scraper to download nhl stats
+
+Original code credit goes to ScotchIO - https://scotch.io/tutorials/scraping-the-web-with-node-js
