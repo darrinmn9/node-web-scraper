@@ -31,15 +31,11 @@ app.get('/', function(req, res) {
       //changes first element from "RK" to "id"
       headers[0] = 'id';
 
-
-
       /*
-
        traverses the document to find each unique table row containing player data
        within each <tr>, a temporary object is created by using our pre-defined headers array as keys
        each header key is set to the value of each <td> (table cell) .text value
        the temporary object is then pushed into json.playerData for each unique table row
-
        */
       $('#stats').find('tbody').find('tr').filter(function(index, el) {
         //filters out periodic header rows that have the designated class "thead" in common
@@ -49,15 +45,16 @@ app.get('/', function(req, res) {
         var tempObj = {};
         $(this).children().each(function(index, el) {
 
-          //this condition is used because some <td>'s have a child <a>. In this case, we want the text inside the <a> and not the <td>
+          /*
+            this condition is used because some <td>'s have a child <a>.
+            In this case, we want the text inside the <a> and not the <td>
+          */
           if ($(this).children().length === 0) {
             tempObj[headers[index]] = $(this).text();
           } else {
             tempObj[headers[index]] = $(this).find('a').text();
           }
-
         });
-
         json.playerData.push(tempObj);
       });
 
