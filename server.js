@@ -5,8 +5,8 @@ var cheerio = require('cheerio');
 var app = express();
 
 app.get('/', function(req, res) {
-  // this webpage contains all player statistics for 2014-2015 season
-  url = 'http://www.hockey-reference.com/leagues/NHL_2015_skaters.html';
+
+  url = 'http://www.basketball-reference.com/leagues/NBA_2015.html';
 
   request(url, function(error, response, html) {
     if (!error) {
